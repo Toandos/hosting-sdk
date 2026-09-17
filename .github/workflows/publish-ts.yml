@@ -1,7 +1,11 @@
 name: Publish package
 
 on:
-  workflow_call: {}
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -10,6 +14,10 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./my-project
 
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +28,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
 
+      - run: npm version ${{ inputs.version }}
       - run: npm ci
       - run: npm run build
 
