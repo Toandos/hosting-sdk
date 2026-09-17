@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Toandos/hosting-sdk/compare/v1.1.0...v1.1.1) (2026-09-17)
+
+
+### Bug Fixes
+
+* **cd:** Overwriting npm version not working ([c419d3f](https://github.com/Toandos/hosting-sdk/commit/c419d3f49c0ba0419a0c4c812b66efcf4aa35138))
+
 ## [1.1.0](https://github.com/Toandos/hosting-sdk/compare/v1.0.0...v1.1.0) (2026-09-17)
 
 
