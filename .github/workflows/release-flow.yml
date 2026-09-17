@@ -1,0 +1,48 @@
+name: Release flow
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+
+  release:
+    needs: tests
+    runs-on: ubuntu-latest
+
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+
+    steps:
+      - name: Run release please
+        uses: googleapis/release-please-action@v5
+        id: release
+        with:
+          release-type: node
+
+  publish-package:
+    needs: release
+    if: needs.release.outputs.release_created == 'true'
+    uses: ./.github/workflows/publish-package.yml
+    permissions:
+      contents: read
+      id-token: write

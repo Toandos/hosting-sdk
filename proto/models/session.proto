@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package toando.hosting.models.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Session {
+    string                       id = 1;
+    google.protobuf.Timestamp    created_at = 2;
+}

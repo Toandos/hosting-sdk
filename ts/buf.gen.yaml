@@ -1,0 +1,12 @@
+version: v2
+
+clean: true
+
+inputs:
+  - directory: ../proto
+
+plugins:
+  - remote: buf.build/bufbuild/es:v2.15.0
+    out: ./src/generated
+    opt:
+      - target=ts

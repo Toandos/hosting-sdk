@@ -1,0 +1,38 @@
+{
+  "name": "hosting-sdk",
+  "version": "1.0.0",
+  "description": "SDK for interacting with the hosting product",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "genproto": "buf generate",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toandos/hosting-sdk.git"
+  },
+  "keywords": [],
+  "author": "xXjojaXx",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Toandos/hosting-sdk/issues"
+  },
+  "homepage": "https://github.com/Toandos/hosting-sdk#readme",
+  "devDependencies": {
+    "tsdown": "^0.23.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.15.0"
+  }
+}
