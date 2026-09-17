@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Toandos/hosting-sdk/compare/v1.0.0...v1.1.0) (2026-09-17)
+
+
+### Features
+
+* **ts:** Add connect rpc client & server ([3d3e377](https://github.com/Toandos/hosting-sdk/commit/3d3e3777fe6042b19631acf9caa31eca1e8b0a2c))
+
 ## 1.0.0 (2026-09-17)
 
 
