@@ -17,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./my-project
+        working-directory: ./ts
 
     steps:
       - uses: actions/checkout@v4
