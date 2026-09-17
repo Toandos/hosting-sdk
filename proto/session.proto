@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package toando.hosting.session;
+
+import "google/protobuf/timestamp.proto";
+
+message Session {
+    string                       id = 1;
+    google.protobuf.Timestamp    created_at = 2;
+}
+
+message CreateSessionRequest { }
+message GetSessionRequest { }
+
+service SessionService {
+    rpc CreateSession(GetSessionRequest) returns(Session);
+    rpc GetSession(GetSessionRequest) returns(Session);
+}
